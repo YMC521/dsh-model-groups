@@ -1,0 +1,10 @@
+# 官方模型选择：本插件是它的 fork，注册同一组入口（composer 的 conversation.input.model 与 /model），
+# 同开会重复声明，故必须关掉官方入口。
+# 注：当前安装走的是 web profile 的 cordis.patch.yml（同样三条内容），本文件只在把本包加进
+# dsh.profile.bundles 时作为 bundle patch 生效，两条路径二选一，不要同时启用。
+- id: ui-model-selection
+  disabled: true
+
+- insert:
+    - id: dsh-model-groups
+      name: dsh-model-groups

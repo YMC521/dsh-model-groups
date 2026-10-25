@@ -1,0 +1,328 @@
+# 演示档案：供应商与模型用的是各家公开的真实名字，但都没有配 API Key，
+# 任何一次发送都会因为没有 key 而失败 —— 这些档案只用来拍 README 截图，不会产生真实请求。
+- id: llm-deepseek
+  disabled: true
+- id: llm-deepseek-account
+  disabled: true
+
+- id: llm-pi-ai
+  config:
+    providers:
+      deepseek:
+        displayName: DeepSeek
+        api: openai-completions
+        baseURL: https://api.deepseek.com/v1
+        models:
+          - id: deepseek-chat
+            name: "DeepSeek Chat"
+            contextWindow: 131072
+            maxTokens: 8192
+            input:
+              - text
+          - id: deepseek-reasoner
+            name: "DeepSeek Reasoner"
+            contextWindow: 131072
+            maxTokens: 65536
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: deepseek-v3.2
+            name: "DeepSeek V3.2"
+            contextWindow: 163840
+            maxTokens: 65536
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+      openai:
+        displayName: OpenAI
+        api: openai-completions
+        baseURL: https://api.openai.com/v1
+        models:
+          - id: gpt-5
+            name: "GPT-5"
+            contextWindow: 400000
+            maxTokens: 128000
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: gpt-5-mini
+            name: "GPT-5 mini"
+            contextWindow: 400000
+            maxTokens: 128000
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: o4
+            name: "o4"
+            contextWindow: 200000
+            maxTokens: 100000
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: o4-mini
+            name: "o4-mini"
+            contextWindow: 200000
+            maxTokens: 100000
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: gpt-4.1
+            name: "GPT-4.1"
+            contextWindow: 1047576
+            maxTokens: 32768
+            input:
+              - text
+      anthropic:
+        displayName: Anthropic
+        api: openai-completions
+        baseURL: https://api.anthropic.com/v1
+        models:
+          - id: claude-opus-4.1
+            name: "Claude Opus 4.1"
+            contextWindow: 200000
+            maxTokens: 32000
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: claude-sonnet-4.5
+            name: "Claude Sonnet 4.5"
+            contextWindow: 1000000
+            maxTokens: 64000
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: claude-haiku-4.5
+            name: "Claude Haiku 4.5"
+            contextWindow: 200000
+            maxTokens: 64000
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+      google:
+        displayName: Google
+        api: openai-completions
+        baseURL: https://generativelanguage.googleapis.com/v1beta/openai
+        models:
+          - id: gemini-2.5-pro
+            name: "Gemini 2.5 Pro"
+            contextWindow: 1048576
+            maxTokens: 65536
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: gemini-2.5-flash
+            name: "Gemini 2.5 Flash"
+            contextWindow: 1048576
+            maxTokens: 65536
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: gemini-2.5-flash-lite
+            name: "Gemini 2.5 Flash-Lite"
+            contextWindow: 1048576
+            maxTokens: 65536
+            input:
+              - text
+      qwen:
+        displayName: 阿里云百炼
+        api: openai-completions
+        baseURL: https://dashscope.aliyuncs.com/compatible-mode/v1
+        models:
+          - id: qwen3-max
+            name: "Qwen3 Max"
+            contextWindow: 262144
+            maxTokens: 32768
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: qwen3-coder-plus
+            name: "Qwen3 Coder Plus"
+            contextWindow: 1048576
+            maxTokens: 65536
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: qwen3-vl-plus
+            name: "Qwen3 VL Plus"
+            contextWindow: 262144
+            maxTokens: 32768
+            input:
+              - text
+          - id: qwen-plus
+            name: "Qwen Plus"
+            contextWindow: 131072
+            maxTokens: 32768
+            input:
+              - text
+          - id: qwen-turbo
+            name: "Qwen Turbo"
+            contextWindow: 1000000
+            maxTokens: 16384
+            input:
+              - text
+      moonshot:
+        displayName: 月之暗面
+        api: openai-completions
+        baseURL: https://api.moonshot.cn/v1
+        models:
+          - id: kimi-k2
+            name: "Kimi K2"
+            contextWindow: 262144
+            maxTokens: 16384
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: kimi-k2-turbo
+            name: "Kimi K2 Turbo"
+            contextWindow: 262144
+            maxTokens: 16384
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: kimi-latest
+            name: "Kimi Latest"
+            contextWindow: 131072
+            maxTokens: 16384
+            input:
+              - text
+      zhipu:
+        displayName: 智谱 AI
+        api: openai-completions
+        baseURL: https://open.bigmodel.cn/api/paas/v4
+        models:
+          - id: glm-4.6
+            name: "GLM-4.6"
+            contextWindow: 200000
+            maxTokens: 131072
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: glm-4.5
+            name: "GLM-4.5"
+            contextWindow: 131072
+            maxTokens: 98304
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: glm-4.5-air
+            name: "GLM-4.5 Air"
+            contextWindow: 131072
+            maxTokens: 65536
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: glm-4.5v
+            name: "GLM-4.5V"
+            contextWindow: 65536
+            maxTokens: 16384
+            input:
+              - text
+      minimax:
+        displayName: MiniMax
+        api: openai-completions
+        baseURL: https://api.minimax.chat/v1
+        models:
+          - id: minimax-m2
+            name: "MiniMax M2"
+            contextWindow: 204800
+            maxTokens: 131072
+            input:
+              - text
+            reasoningEfforts:
+              off: null
+              low: low
+              medium: medium
+              high: high
+          - id: minimax-text-01
+            name: "MiniMax Text 01"
+            contextWindow: 1000000
+            maxTokens: 40000
+            input:
+              - text
+
+- id: ui-model-selection
+  disabled: true
+- insert:
+    - id: dsh-model-groups
+      name: dsh-model-groups
+- id: ui-settings-general
+  name: "@deepseek-ai/dsh-client-ui-settings-general"
+  config:
+    welcomeNoticeVersion: 2026-09-28.1
+- id: agent-default-model
+  name: "@deepseek-ai/dsh-agent-default-model"
+  config:
+    provider: zhipu
+    model: glm-4.6

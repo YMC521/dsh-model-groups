@@ -1,0 +1,66 @@
+{
+  "name": "dsh-model-groups",
+  "version": "0.1.0",
+  "description": "把 DeepSeek Harness 的模型选择列表按供应商折叠分组：一级是供应商、二级是模型，保留搜索，打开即聚焦搜索框。",
+  "type": "module",
+  "license": "MIT",
+  "author": "YG",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "model-picker",
+    "accordion",
+    "fold",
+    "provider"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "locale/*.json",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "smoke": "node scripts/smoke.cjs",
+    "test": "node scripts/smoke.cjs && node scripts/e2e/accept.cjs && node scripts/e2e/effort.cjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.12.0"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-commands",
+        "@deepseek-ai/dsh-api-remotes"
+      ],
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YMC521/dsh-model-groups.git"
+  },
+  "homepage": "https://github.com/YMC521/dsh-model-groups#readme",
+  "bugs": {
+    "url": "https://github.com/YMC521/dsh-model-groups/issues"
+  }
+}
